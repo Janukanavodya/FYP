@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scanner</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="scanner-container">
+        <div class="tab">
+            <button class="active">Light scan</button>
+            <button>Deep scan</button>
+        </div>
+        <div class="form-group">
+            <label for="target">Target</label>
+            <input type="text" id="target" placeholder="IP or Hostname">
+        </div>
+        <div class="form-group">
+            <label>Scan options</label>
+            <div class="options">
+                <label class="toggle">
+                    <input type="checkbox" checked> Detect service version
+                </label>
+                <label class="toggle">
+                    <input type="checkbox"> Detect operating system
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Protocol</label>
+            <div class="options">
+                <label>
+                    <input type="radio" name="protocol" checked> TCP
+                </label>
+                <label>
+                    <input type="radio" name="protocol"> UDP
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Port selection</label>
+            <div class="options">
+                <label>
+                    <input type="radio" name="port_scan" checked> Scan common ports
+                </label>
+                <label>
+                    <input type="radio" name="port_scan"> Scan top 100 ports
+                </label>
+                <label>
+                    <input type="radio" name="port_scan"> Scan all ports
+                </label>
+            </div>
+        </div>
+        <div class="form-group terms">
+            <input type="checkbox" id="terms-checkbox" onchange="toggleButton()">
+            <label for="terms-checkbox">I confirm that I have authorization to scan the target and agree to the <a href="#">terms of service</a></label>
+        </div>
+        <div id="error-message" class="error-message">You have to be authorized to scan this target.</div>
+        <div class="form-group">
+            <button id="start-scan-button" disabled>Start scan</button>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- Link to the external JS file -->
+</body>
+</html>
